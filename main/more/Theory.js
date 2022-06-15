@@ -216,7 +216,7 @@ var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho";
 var getPublicationMultiplier = (tau) => tau.pow(0.223) / BigNumber.THREE;
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.223}}{3}";
 var getTau = () => currency2.value;
-var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
+var get2DGraphValue = () => 1;
 
 var getC1 = (level) => BigNumber.from(1.15).pow(level);
 var getC2 = (level) => BigNumber.from(1.5).pow(level);
