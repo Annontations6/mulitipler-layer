@@ -1,4 +1,6 @@
 # v1
+## v1.1
+- Add This Power of Killing mulitipler.
 ## v1.0
 - Intial Release!
 
