@@ -233,6 +233,7 @@ var getC2 = (level) => BigNumber.from(1.5).pow(level);
 var getC3 = (level) => BigNumber.TWO.pow(level);
 var getC4 = (level) => BigNumber.from(4).pow(level);
 var getCONFRIM = (level) => BigNumber.TWO.pow(level);
+var getC5 = (level) => BigNumber.TWO.pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
