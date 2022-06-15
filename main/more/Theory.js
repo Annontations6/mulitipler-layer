@@ -6,9 +6,9 @@ import { Utils } from "./api/Utils";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.0;
+var version = 1.1;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0;
@@ -71,11 +71,21 @@ var init = () => {
         confirm0.getDescription = (_) => Utils.getMath(getDesc(confirm0.level));
         confirm0.getInfo = (amount) => Utils.getMathTo(getInfo(confirm0.level), getInfo(confirm0.level + amount));
     }
+    
+    // c5
+    {
+        let getDesc = (level) => "c_5=2^{" + level + "}";
+        let getInfo = (level) => "c_5=" + getCONFRIM(level).toString(0);
+        c5 = theory.createUpgrade(5, currency, new ExponentialCost(1e5, Math.log2(2.16)));
+        c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
+        c5.getInfo = (amount) => Utils.getMathTo(getInfo(c5.level), getInfo(c5.level + amount));
+        c5.maxLevel = 1;
+    }
 
     /////////////////////
     // Permanent Upgrades
-    theory.createBuyAllUpgrade(0, currency2, 1000);
-    theory.createAutoBuyerUpgrade(1, currency2, 1e8);
+    theory.createBuyAllUpgrade(0, currency, 1000);
+    theory.createAutoBuyerUpgrade(1, currency, 1e8);
 
     ///////////////////////
     //// Milestone Upgrades
@@ -189,10 +199,10 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
-    currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level);
+    currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level)
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level);
     }
 }
 
