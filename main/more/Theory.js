@@ -67,7 +67,7 @@ var init = () => {
     {
         let getDesc = (level) => "confrim=2^{" + level + "}";
         let getInfo = (level) => "confrim=" + getCONFRIM(level).toString(0);
-        confirm0 = theory.createUpgrade(2, currency, new ExponentialCost(50, Math.log2(2.16)));
+        confirm0 = theory.createUpgrade(4, currency, new ExponentialCost(50, Math.log2(2.16)));
         confirm0.getDescription = (_) => Utils.getMath(getDesc(confirm0.level));
         confirm0.getInfo = (amount) => Utils.getMathTo(getInfo(confirm0.level), getInfo(confirm0.level + amount));
     }
