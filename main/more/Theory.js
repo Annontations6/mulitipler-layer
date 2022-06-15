@@ -192,7 +192,7 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency += getCONFRIM(confirm0.level)
+       currency.value += getCONFRIM(confirm0.level)
     }
 }
 
