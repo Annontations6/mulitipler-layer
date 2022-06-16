@@ -340,6 +340,9 @@ var tick = (elapsedTime, multiplier) => {
        currency2.value = BigNumber.TWO;
        currency.value += getCONFRIM(confirm0.level) * getC5(c5.level);
     }
+    if (currency.value > 1e308) {
+        currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF4(f4.level);
+    }
 }
 
 var getPrimaryEquation = () => {
