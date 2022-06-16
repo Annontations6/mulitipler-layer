@@ -12,7 +12,7 @@ var authors = "Annontations6";
 var version = 1.3;
 
 var currency, currency2;
-var c1, c2, c3, c4, confirm0;
+var c1, c2, c3, c4, confirm0, prestige;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
