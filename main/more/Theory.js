@@ -3,6 +3,7 @@ import { Localization } from "./api/Localization";
 import { BigNumber } from "./api/BigNumber";
 import { theory } from "./api/Theory";
 import { Utils } from "./api/Utils";
+import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
@@ -80,6 +81,17 @@ var init = () => {
         c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
         c5.getInfo = (amount) => Utils.getMathTo(getInfo(c5.level), getInfo(c5.level + amount));
         c5.maxLevel = 1;
+    }
+    
+    // prestige
+    {
+        prestige = theory.createUpgrade(9999, currency, new FreeCost());
+        prestige.getDescription = (_) => "Open debug Menu";
+        prestige.getInfo = (amount) => "Open debug Menu";
+        prestige.boughtOrRefunded = (_) => {
+            getDebugPopup.show();
+            prestige.level = 0;
+        }
     }
 
     /////////////////////
@@ -191,6 +203,63 @@ var init = () => {
     chapter3 = theory.createStoryChapter(2, "what hh", "while do: true == true (somehow?) \nbe \nAaaaaa \nthis platform \ngo spect!", () => c2.level > 2);
 
     updateAvailability();
+    
+    var getEndPopup = ui.createPopup({
+        title: "The End",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 309,
+                    cornerRadius: 0,
+                    content: ui.createLabel({text: "\nYou have reached the end of Mulitipler Layer. This theory ends at the Layer of 1e308, it however can go higher (if you really want to push it.)\nWe hope you enjoyed playing through this, as much as we did, making and designing this theory!\n\nCheck out the other Custom Theory that came packaged with the new update: \"Omega Layers EZ made with Jeehan2561\" after you have played this, if you haven't already!\n\nPS: If you made it this far, DM Annontations6 about how bad of a language JavaScript is end.",
+                        padding: Thickness(12, 2, 12, 2),
+                        fontSize: 15
+                    })
+                }),
+                ui.createLabel({
+                    text: "You Win!",
+                    horizontalTextAlignment: TextAlignment.CENTER,
+                    fontAttributes: FontAttributes.BOLD,
+                    fontSize: 18,
+                    padding: Thickness(0, 18, 0, 18),
+                }),
+                ui.createButton({text: "Close", onClicked: () => getEndPopup.hide()})
+            ]
+        })
+    });
+
+    var getDebugPopup = ui.createPopup({
+        title: "The Debug",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 309,
+                    cornerRadius: 0,
+                    content: ui.createLabel({text: "what this?",
+                        padding: Thickness(12, 2, 12, 2),
+                        fontSize: 15
+                    })
+                }),
+                ui.createLabel({
+                    text: "debug news for other days!",
+                    horizontalTextAlignment: TextAlignment.CENTER,
+                    fontAttributes: FontAttributes.BOLD,
+                    fontSize: 18,
+                    padding: Thickness(0, 18, 0, 18),
+                }),
+                ui.createButton({text: "Close", onClicked: () => getDebugPopup.hide()}),
+                ui.createButton({text: "Test Button 1"}),
+                ui.createButton({text: "Test Button 2"}),
+                ui.createButton({text: "Test Button 3"}),
+                ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()})
+            ]
+        })
+    });
+    
+    
+    if (currency.value > 1e308) {
+        getEndPopup.show();
+    }
 }
 
 var updateAvailability = () => {
