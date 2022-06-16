@@ -6,9 +6,9 @@ import { Utils } from "./api/Utils";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.1;
+var version = 1.2;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0;
