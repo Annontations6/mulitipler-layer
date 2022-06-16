@@ -89,7 +89,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_1=1.2^{" + level + "}";
         let getInfo = (level) => "f_1=" + getF1(level).toString(0);
-        f1 = theory.createUpgrade(5, currency_functions, new ExponentialCost(100, Math.log2(1.23)));
+        f1 = theory.createUpgrade(6, currency_functions, new ExponentialCost(100, Math.log2(1.23)));
         f1.getDescription = (_) => Utils.getMath(getDesc(f1.level));
         f1.getInfo = (amount) => Utils.getMathTo(getInfo(f1.level), getInfo(f1.level + amount));
     }
@@ -98,7 +98,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_2 (percentage)=1.03^{" + level + "}";
         let getInfo = (level) => "f_2=" + getF2(level).toString(0);
-        f2 = theory.createUpgrade(6, currency_functions, new ExponentialCost(1e4, Math.log2(2.25)));
+        f2 = theory.createUpgrade(7, currency_functions, new ExponentialCost(1e4, Math.log2(2.25)));
         f2.getDescription = (_) => Utils.getMath(getDesc(f2.level));
         f2.getInfo = (amount) => Utils.getMathTo(getInfo(f2.level), getInfo(f2.level + amount));
     }
@@ -107,7 +107,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_\\omega=2^{" + level + "}";
         let getInfo = (level) => "f_\\omega=" + getFOMEGA(level).toString(0);
-        fomega = theory.createUpgrade(7, currency_functions, new ExponentialCost(1e9, Math.log2(1e15)));
+        fomega = theory.createUpgrade(8, currency_functions, new ExponentialCost(1e9, Math.log2(1e15)));
         fomega.getDescription = (_) => Utils.getMath(getDesc(fomega.level));
         fomega.getInfo = (amount) => Utils.getMathTo(getInfo(fomega.level), getInfo(fomega.level + amount));
     }
@@ -116,7 +116,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_\\omega power2=2^{" + level + "}";
         let getInfo = (level) => "f_\\omega power2=" + getFOMEGASQ(level).toString(0);
-        fomegasq = theory.createUpgrade(7, currency_functions, new ExponentialCost(1e21, Math.log2(1e19)));
+        fomegasq = theory.createUpgrade(9, currency_functions, new ExponentialCost(1e21, Math.log2(1e19)));
         fomegasq.getDescription = (_) => Utils.getMath(getDesc(fomegasq.level));
         fomegasq.getInfo = (amount) => Utils.getMathTo(getInfo(fomegasq.level), getInfo(fomegasq.level + amount));
     }
@@ -125,7 +125,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_\\omega power3=2^{" + level + "}";
         let getInfo = (level) => "f_\\omega power3=" + getFOMEGACUB(level).toString(0);
-        fomegacub = theory.createUpgrade(8, currency_functions, new ExponentialCost(1e69, Math.log2(1e23)));
+        fomegacub = theory.createUpgrade(10, currency_functions, new ExponentialCost(1e69, Math.log2(1e23)));
         fomegacub.getDescription = (_) => Utils.getMath(getDesc(fomegacub.level));
         fomegacub.getInfo = (amount) => Utils.getMathTo(getInfo(fomegacub.level), getInfo(fomega.level + amount));
     }
@@ -134,7 +134,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_3=5^{" + level + "}";
         let getInfo = (level) => "f_2=" + getF3(level).toString(0);
-        f3 = theory.createUpgrade(9, currency_functions, new ExponentialCost(1e70, Math.log2(1e100)));
+        f3 = theory.createUpgrade(11, currency_functions, new ExponentialCost(1e70, Math.log2(1e100)));
         f3.getDescription = (_) => Utils.getMath(getDesc(f3.level));
         f3.getInfo = (amount) => Utils.getMathTo(getInfo(f3.level), getInfo(f3.level + amount));
     }
