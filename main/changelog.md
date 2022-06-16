@@ -1,4 +1,8 @@
 # v1
+## v1.4:
+- seed of fixes
+- first public functions mod.
+- when more weird fix
 ## v1.3
 - added 1 achievement
 - add ui this the end or you win!
