@@ -1,4 +1,7 @@
 # v1
+## v1.3
+- added 1 achievement
+- add ui this the end or you win!
 ## v1.2
 - Private Function Mod, Public Function mod i soon.
 - Other While Function finshed for other days
