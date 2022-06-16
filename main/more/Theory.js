@@ -6,9 +6,9 @@ import { Utils } from "./api/Utils";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.2;
+var version = 1.3;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0;
@@ -181,7 +181,8 @@ var init = () => {
     achievement72 = theory.createAchievement(71, "Layer of Layers!", "reach layer 1e24", () => currency.value > 1e24);
     achievement73 = theory.createAchievement(72, "NiCe!", "reach layer 1e69", () => currency.value > 1e69);
     achievement74 = theory.createAchievement(73, "I TURLY NEVER ENDS", "reach layer 1e100", () => currency.value > 1e100);
-    achievement75 = theory.createSecretAchievement(74, "Pi-Illion", "Reach layer 2659365073.96", "cant be 1000^pi?", () => currency.value > 2659365073.96);
+    achievement74 = theory.createAchievement(74, "Endgame", "reach layer 1e308 and finsh to Mulitipler Layer.", () => currency.value > 1e308);
+    achievement75 = theory.createSecretAchievement(99999, "Pi-Illion", "Reach layer 2659365073.96", "cant be 1000^pi?", () => currency.value > 2659365073.96);
 
     ///////////////////
     //// Story chapters
