@@ -7,12 +7,12 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.3;
+var version = 1.4;
 
 var currency, currency2;
-var c1, c2, c3, c4, confirm0, prestige;
+var c1, c2, c3, c4, confirm0, f1, f2, f3, prestige;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
@@ -21,9 +21,11 @@ var chapter1, chapter2;
 var init = () => {
     currency = theory.createCurrency();
     currency2 = theory.createCurrency();
+    currency_functions = theory.createCurrency("ƒ", "ƒ");
 
     currency2.value = 2;
     currency.value = 1;
+    currency_functions.value = 0;
 
     ///////////////////
     // Regular Upgrades
@@ -81,6 +83,60 @@ var init = () => {
         c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
         c5.getInfo = (amount) => Utils.getMathTo(getInfo(c5.level), getInfo(c5.level + amount));
         c5.maxLevel = 1;
+    }
+    
+    // f1
+    {
+        let getDesc = (level) => "f_1=1.2^{" + level + "}";
+        let getInfo = (level) => "f_1=" + getF1(level).toString(0);
+        f1 = theory.createUpgrade(5, currency_functions, new ExponentialCost(100, Math.log2(1.23)));
+        f1.getDescription = (_) => Utils.getMath(getDesc(f1.level));
+        f1.getInfo = (amount) => Utils.getMathTo(getInfo(f1.level), getInfo(f1.level + amount));
+    }
+
+    // f2
+    {
+        let getDesc = (level) => "f_2 (percentage)=1.03^{" + level + "}";
+        let getInfo = (level) => "f_2=" + getF2(level).toString(0);
+        f2 = theory.createUpgrade(6, currency_functions, new ExponentialCost(1e4, Math.log2(2.25)));
+        f2.getDescription = (_) => Utils.getMath(getDesc(f2.level));
+        f2.getInfo = (amount) => Utils.getMathTo(getInfo(f2.level), getInfo(f2.level + amount));
+    }
+
+    // fomega
+    {
+        let getDesc = (level) => "f_\\omega=2^{" + level + "}";
+        let getInfo = (level) => "f_\\omega=" + getFOMEGA(level).toString(0);
+        fomega = theory.createUpgrade(7, currency_functions, new ExponentialCost(1e9, Math.log2(1e15)));
+        fomega.getDescription = (_) => Utils.getMath(getDesc(fomega.level));
+        fomega.getInfo = (amount) => Utils.getMathTo(getInfo(fomega.level), getInfo(fomega.level + amount));
+    }
+
+    // fomegasq
+    {
+        let getDesc = (level) => "f_\\omega power2=2^{" + level + "}";
+        let getInfo = (level) => "f_\\omega power2=" + getFOMEGASQ(level).toString(0);
+        fomegasq = theory.createUpgrade(7, currency_functions, new ExponentialCost(1e21, Math.log2(1e19)));
+        fomegasq.getDescription = (_) => Utils.getMath(getDesc(fomegasq.level));
+        fomegasq.getInfo = (amount) => Utils.getMathTo(getInfo(fomegasq.level), getInfo(fomegasq.level + amount));
+    }
+
+    // fomegacub
+    {
+        let getDesc = (level) => "f_\\omega power3=2^{" + level + "}";
+        let getInfo = (level) => "f_\\omega power3=" + getFOMEGACUB(level).toString(0);
+        fomegacub = theory.createUpgrade(8, currency_functions, new ExponentialCost(1e69, Math.log2(1e23)));
+        fomegacub.getDescription = (_) => Utils.getMath(getDesc(fomegacub.level));
+        fomegacub.getInfo = (amount) => Utils.getMathTo(getInfo(fomegacub.level), getInfo(fomega.level + amount));
+    }
+
+    // f3
+    {
+        let getDesc = (level) => "f_3=5^{" + level + "}";
+        let getInfo = (level) => "f_2=" + getF3(level).toString(0);
+        f3 = theory.createUpgrade(9, currency_functions, new ExponentialCost(1e70, Math.log2(1e100)));
+        f3.getDescription = (_) => Utils.getMath(getDesc(f3.level));
+        f3.getInfo = (amount) => Utils.getMathTo(getInfo(f3.level), getInfo(f3.level + amount));
     }
     
     // prestige
@@ -193,8 +249,18 @@ var init = () => {
     achievement72 = theory.createAchievement(71, "Layer of Layers!", "reach layer 1e24", () => currency.value > 1e24);
     achievement73 = theory.createAchievement(72, "NiCe!", "reach layer 1e69", () => currency.value > 1e69);
     achievement74 = theory.createAchievement(73, "I TURLY NEVER ENDS", "reach layer 1e100", () => currency.value > 1e100);
-    achievement74 = theory.createAchievement(74, "Endgame", "reach layer 1e308 and finsh to Mulitipler Layer.", () => currency.value > 1e308);
-    achievement75 = theory.createSecretAchievement(99999, "Pi-Illion", "Reach layer 2659365073.96", "cant be 1000^pi?", () => currency.value > 2659365073.96);
+    achievement75 = theory.createAchievement(74, "ƒ1 = 1", "reach function 1", () => currency_functions.value > 1);
+    achievement76 = theory.createAchievement(75, "ƒ2 = 1,000,000", "reach function 1 million", () => currency_functions.value > 1e6);
+    achievement77 = theory.createAchievement(76, "ƒ3 = 1e36", "reach function 1 undecillion", () => currency_functions.value > 1e36);
+    achievement78 = theory.createAchievement(77, "ƒ4 = 1e125", "reach function 100 quadragintillion", () => currency_functions.value > 1e125);
+    achievement79 = theory.createAchievement(78, "Dunactions", "reach function upgrade 1 level 69", () => f1.level > 68);
+    achievement80 = theory.createAchievement(79, "Bonus!", "reach function upgrade 2 level 1", () => f2.level > 0);
+    achievement81 = theory.createAchievement(80, "ωw", "Increase value of ƒω", () => fomega.level > 0);
+    achievement82 = theory.createAchievement(81, "ㄖmega 丂quared", "Increase value of ƒω^2", () => fomegasq.level > 0);
+    achievement83 = theory.createAchievement(82, "[]|\\/|[-(_¬/-\\ (|⅃|3[-|)", "Increase value of ƒω^3", () => fomegacub.level > 0);
+    achievement84 = theory.createSecretAchievement(99999, "Pi-Illion", "Reach layer 2659365073.96", "cant be 1000^pi?", () => currency.value > 2659365073.96);
+    achievement85 = theory.createSecretAchievement(100000, "Have Did Number Longer functions?", "Reach function 1.72e141", "sorry this number longer that in?", () => currency_functions.value > 1.72e141);
+    achievement86 = theory.createSecretAchievement(100001, "Endgame", "reach function 1e183 and finsh to Mulitipler Layer.", "what", () => currency_functions.value > 1e183);
 
     ///////////////////
     //// Story chapters
@@ -257,7 +323,7 @@ var init = () => {
     });
     
     
-    if (currency.value > 1e308) {
+    if (currency_functions.value > 1e183) {
         getEndPopup.show();
     }
 }
@@ -304,6 +370,12 @@ var getC3 = (level) => BigNumber.TWO.pow(level);
 var getC4 = (level) => BigNumber.from(4).pow(level);
 var getCONFRIM = (level) => BigNumber.TWO.pow(level);
 var getC5 = (level) => BigNumber.TWO.pow(level);
+var getF1 = (level) => BigNumber.from(1.2).pow(level);
+var getF2 = (level) => (BigNumber.from(1.03).pow(level) * 100) / 100;
+var getFOMEGA = (level) => BigNumber.TWO.pow(level);
+var getFOMEGASQ = (level) => BigNumber.TWO.pow(level);
+var getFOMEGACUB = (level) => BigNumber.TWO.pow(level);
+var getF3 = (level) => BigNumber.from(5).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
