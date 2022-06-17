@@ -1,6 +1,7 @@
 # v1
 ## v1.5:
 - you more fixes of update ui.
+### based costs
 | Order | Name | Base Cost | Formula |
 |-------|------|-----------|---------|
 | 0 | Functions Gain | 100 | $$ 1.2^{x} $$ |
@@ -9,6 +10,7 @@
 | 3 | Functions Variable Omega Squared | $$ 10^{21} $$ | $$ 2^{x} $$ |
 | 4 | Functions Variable Omega Cubed | $$ 10^{69} $$ | $$ 2^{x} $$ |
 | 5 | Functions Gain Quintple | $$ 10^{70} $$ | $$ 5^{x} $$ |
+
 ## v1.4:
 - seed of fixes
 - first public functions mod.
