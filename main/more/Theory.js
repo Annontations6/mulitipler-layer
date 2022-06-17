@@ -7,7 +7,7 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
 var version = 1.4;
 
@@ -107,7 +107,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_\\omega=2^{" + level + "}";
         let getInfo = (level) => "f_\\omega=" + getFOMEGA(level).toString(0);
-        fomega = theory.createUpgrade(8, currency_functions, new ExponentialCost(1e9, Math.log2(1e15)));
+        fomega = theory.createUpgrade(8, currency_functions, new ExponentialCost(5e9, Math.log2(1e15)));
         fomega.getDescription = (_) => Utils.getMath(getDesc(fomega.level));
         fomega.getInfo = (amount) => Utils.getMathTo(getInfo(fomega.level), getInfo(fomega.level + amount));
     }
@@ -277,7 +277,7 @@ var init = () => {
                 ui.createFrame({
                     heightRequest: 309,
                     cornerRadius: 0,
-                    content: ui.createLabel({text: "\nYou have reached the end of Mulitipler Layer. This theory ends at the Layer of 1e308, it however can go higher (if you really want to push it.)\nWe hope you enjoyed playing through this, as much as we did, making and designing this theory!\n\nCheck out the other Custom Theory that came packaged with the new update: \"Omega Layers EZ made with Jeehan2561\" after you have played this, if you haven't already!\n\nPS: If you made it this far, DM Annontations6 about how bad of a language JavaScript is end.",
+                    content: ui.createLabel({text: "\nYou have reached the end of Mulitipler Layer. This theory ends at the 1e180 functions, it however can go higher (if you really want to push it.)\nWe hope you enjoyed playing through this, as much as we did, making and designing this theory!\n\nCheck out the other Custom Theory that came packaged with the new update: \"Omega Layers EZ made with Jeehan2561\" after you have played this, if you haven't already!\n\nPS: If you made it this far, DM Annontations6 about how bad of a language JavaScript is end.",
                         padding: Thickness(12, 2, 12, 2),
                         fontSize: 15
                     })
