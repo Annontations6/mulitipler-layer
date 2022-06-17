@@ -9,7 +9,7 @@ var id = "Confrim?";
 var name = "Mulitipler Layer";
 var description = "when do winner this game. \n\n-----Changelog----- \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.4;
+var version = 1.5;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0, f1, f2, f3, prestige;
