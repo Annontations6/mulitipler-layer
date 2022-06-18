@@ -267,6 +267,7 @@ var init = () => {
     chapter1 = theory.createStoryChapter(0, "Mulit", "aaa \naaaa \naaaaa", () => c1.level > 0);
     chapter2 = theory.createStoryChapter(1, "probems?", "Probems do this file and go \naaaa \naaaaa", () => c2.level > 0);
     chapter3 = theory.createStoryChapter(2, "what hh", "while do: true == true (somehow?) \nbe \nAaaaaa \nthis platform \ngo spect!", () => c2.level > 2);
+    chapter3 = theory.createStoryChapter(2, "hundred?", "wow \nthis \nwow", () => c2.level > 99);
 
     updateAvailability();
     
