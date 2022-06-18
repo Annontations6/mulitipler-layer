@@ -1,4 +1,7 @@
 # v1
+## v1.6:
+- new story chapter :)
+- 🕟🕗🕔 over times times to endgame
 ## v1.5:
 - you more fixes of update ui.
 ### based costs
