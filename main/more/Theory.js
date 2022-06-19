@@ -77,7 +77,7 @@ var init = () => {
     
     // c5
     {
-        let getDesc = (level) => "c_5=2^{" + level + "}";
+        let getDesc = (level) => "c_5=4^{" + level + "}";
         let getInfo = (level) => "c_5=" + getCONFRIM(level).toString(0);
         c5 = theory.createUpgrade(5, currency, new ExponentialCost(1e5, Math.log2(2.16)));
         c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
@@ -373,7 +373,7 @@ var getC2 = (level) => BigNumber.from(1.5).pow(level);
 var getC3 = (level) => BigNumber.TWO.pow(level);
 var getC4 = (level) => BigNumber.from(4).pow(level);
 var getCONFRIM = (level) => BigNumber.TWO.pow(level);
-var getC5 = (level) => BigNumber.TWO.pow(level);
+var getC5 = (level) => BigNumber.from(4).pow(level);
 var getF1 = (level) => BigNumber.from(1.2).pow(level);
 var getF2 = (level) => (BigNumber.from(1.03).pow(level) * 100) / 100;
 var getFOMEGA = (level) => BigNumber.TWO.pow(level);
