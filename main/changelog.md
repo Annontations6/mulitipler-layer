@@ -1,4 +1,6 @@
 # v1
+## v1.7:
+- ever fix
 ## v1.6:
 - new story chapter :)
 - 🕟🕗🕔 over times times to endgame
