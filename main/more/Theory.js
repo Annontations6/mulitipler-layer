@@ -7,9 +7,9 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.6;
+var version = 1.7;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0, f1, f2, f3, prestige;
@@ -267,7 +267,7 @@ var init = () => {
     chapter1 = theory.createStoryChapter(0, "Mulit", "aaa \naaaa \naaaaa", () => c1.level > 0);
     chapter2 = theory.createStoryChapter(1, "probems?", "Probems do this file and go \naaaa \naaaaa", () => c2.level > 0);
     chapter3 = theory.createStoryChapter(2, "what hh", "while do: true == true (somehow?) \nbe \nAaaaaa \nthis platform \ngo spect!", () => c2.level > 2);
-    chapter3 = theory.createStoryChapter(3, "hundred?", "wow \nthis \nwow", () => c2.level > 99);
+    chapter3 = theory.createStoryChapter(3, "hundred parsing", "wow \nthis \nwow", () => c2.level > 99);
 
     updateAvailability();
     
