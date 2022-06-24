@@ -134,7 +134,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_3=5^{" + level + "}";
         let getInfo = (level) => "f_2=" + getF3(level).toString(0);
-        f3 = theory.createUpgrade(11, currency_functions, new ExponentialCost(1e70, Math.log2(1e100)));
+        f3 = theory.createUpgrade(11, currency_functions, new ExponentialCost(1e70, Math.log2(1e90)));
         f3.getDescription = (_) => Utils.getMath(getDesc(f3.level));
         f3.getInfo = (amount) => Utils.getMathTo(getInfo(f3.level), getInfo(f3.level + amount));
     }
