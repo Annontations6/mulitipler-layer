@@ -1,4 +1,8 @@
 # v1
+## v1.8:
+- fix upgrade
+- automation, power auto | Created Popup
+- so fix
 ## v1.7:
 - ever fix
 ## v1.6:

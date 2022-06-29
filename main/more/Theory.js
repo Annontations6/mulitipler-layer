@@ -7,9 +7,9 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.7;
+var version = 1.8;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0, f1, f2, f3, prestige;
@@ -138,6 +138,16 @@ var init = () => {
         f3.getDescription = (_) => Utils.getMath(getDesc(f3.level));
         f3.getInfo = (amount) => Utils.getMathTo(getInfo(f3.level), getInfo(f3.level + amount));
     }
+
+    // c6
+    {
+        let getDesc = (level) => "c_6=10^{" + level + "}";
+        let getInfo = (level) => "c_6=" + getC6(level).toString(0);
+        c6 = theory.createUpgrade(12, currency, new ExponentialCost(1e33, Math.log2(1e15)));
+        c6.getDescription = (_) => Utils.getMath(getDesc(c6.level));
+        c6.getInfo = (amount) => Utils.getMathTo(getInfo(c6.level), getInfo(c6.level + amount));
+        c6.maxLevel = 15;
+    }
     
     // prestige
     {
@@ -147,6 +157,28 @@ var init = () => {
         prestige.boughtOrRefunded = (_) => {
             getDebugPopup.show();
             prestige.level = 0;
+        }
+    }
+
+    // prestige2
+    {
+        prestige2 = theory.createUpgrade(10000, currency, new ExponentialCost(1e25, Math.log2(1)));
+        prestige2.getDescription = (_) => "Open automation Menu";
+        prestige2.getInfo = (amount) => "Open automation Menu";
+        prestige2.boughtOrRefunded = (_) => {
+            popup.show();
+            prestige2.level = 0;
+        }
+    }
+
+    // prestige3
+    {
+        prestige3 = theory.createUpgrade(10001, currency, new ExponentialCost(1e35, Math.log2(1)));
+        prestige3.getDescription = (_) => "Open power automation Menu";
+        prestige3.getInfo = (amount) => "Open power automation Menu";
+        prestige3.boughtOrRefunded = (_) => {
+            popup2.show();
+            prestige3.level = 0;
         }
     }
 
@@ -323,6 +355,56 @@ var init = () => {
         })
     });
     
+    var popup = ui.createPopup({
+        title: "Auto Killing mulitipler",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "I show know latex is go formula know :)",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createLabel({text: "Automation"}),
+                ui.createLatexLabel({text: "\\(\\sqrt{10^2+1}\\)"}),
+                ui.createSwitch(),
+                ui.createButton({text: "Add 5+ for ^1.15", onClicked: () => c1.level += 5}),
+                ui.createButton({text: "Add 5+ for ^1.5", onClicked: () => c2.level += 5}),
+                ui.createButton({text: "Add 5+ for ^2", onClicked: () => c3.level += 5}),
+                ui.createButton({text: "Add 5+ for ^4", onClicked: () => c4.level += 5}),
+                ui.createLabel({text: " i show Power Automation i think -_-"}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()}),
+            ]
+        })
+    });
+    
+    var popup2 = ui.createPopup({
+        title: "Power Automation",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "i show know this this game know power automation power.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createLabel({text: "Power automation i sorry fast i know:)"}),
+                ui.createButton({text: "Automation of Confrim0", onClicked: () => confirm0.level += 1}),
+                ui.createButton({text: "Automation of f1", onClicked: () => f1.level += 2}),
+                ui.createButton({text: "Automation of f2", onClicked: () => f2.level += 2}),
+                ui.createButton({text: "Close", onClicked: () => popup2.hide()})
+            ]
+        })
+    });
+    
     
     if (currency_functions.value > 1e183) {
         getEndPopup.show();
@@ -380,6 +462,7 @@ var getFOMEGA = (level) => BigNumber.TWO.pow(level);
 var getFOMEGASQ = (level) => BigNumber.TWO.pow(level);
 var getFOMEGACUB = (level) => BigNumber.TWO.pow(level);
 var getF3 = (level) => BigNumber.from(5).pow(level);
+var getC6 = (level) => BigNumber.from(10).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
