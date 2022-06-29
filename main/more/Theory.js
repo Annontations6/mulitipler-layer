@@ -116,7 +116,7 @@ var init = () => {
     {
         let getDesc = (level) => "f_\\omega power2=2^{" + level + "}";
         let getInfo = (level) => "f_\\omega power2=" + getFOMEGASQ(level).toString(0);
-        fomegasq = theory.createUpgrade(9, currency_functions, new ExponentialCost(1e21, Math.log2(1e19)));
+        fomegasq = theory.createUpgrade(9, currency_functions, new ExponentialCost(1e22, Math.log2(1e19)));
         fomegasq.getDescription = (_) => Utils.getMath(getDesc(fomegasq.level));
         fomegasq.getInfo = (amount) => Utils.getMathTo(getInfo(fomegasq.level), getInfo(fomegasq.level + amount));
     }
