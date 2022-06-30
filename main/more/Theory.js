@@ -7,12 +7,12 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.9:fix popup \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.8;
+var version = 1.9;
 
 var currency, currency2;
-var c1, c2, c3, c4, confirm0, c5, f1, f2, f3, prestige, prestige2, prestige3;
+var c1, c2, c3, c4, c5, confirm0, f1, f2, f3, prestige, prestige2, prestige3, prestige4;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
@@ -78,7 +78,7 @@ var init = () => {
     // c5
     {
         let getDesc = (level) => "c_5=4^{" + level + "}";
-        let getInfo = (level) => "c_5=" + getC5(level).toString(0);
+        let getInfo = (level) => "c_5=" + getCONFRIM(level).toString(0);
         c5 = theory.createUpgrade(5, currency, new ExponentialCost(1e5, Math.log2(1e10)));
         c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
         c5.getInfo = (amount) => Utils.getMathTo(getInfo(c5.level), getInfo(c5.level + amount));
@@ -179,6 +179,17 @@ var init = () => {
         prestige3.boughtOrRefunded = (_) => {
             popup2.show();
             prestige3.level = 0;
+        }
+    }
+
+    // prestige4
+    {
+        prestige4 = theory.createUpgrade(10002, currency, new ExponentialCost(1, Math.log2(1)));
+        prestige4.getDescription = (_) => "Open stat Menu";
+        prestige4.getInfo = (amount) => "Open stat Menu";
+        prestige4.boughtOrRefunded = (_) => {
+            popup3.show();
+            prestige4.level = 0;
         }
     }
 
@@ -371,6 +382,7 @@ var init = () => {
                 ui.createImage({source: ImageSource.ACCELERATE}),
                 ui.createLabel({text: "Automation"}),
                 ui.createLatexLabel({text: "\\(\\sqrt{10^2+1}\\)"}),
+                ui.createLatexLabel({text: "\\(f(t) = ee55000\\)"}),
                 ui.createSwitch(),
                 ui.createButton({text: "Add 5+ for ^1.15", onClicked: () => c1.level += 5}),
                 ui.createButton({text: "Add 5+ for ^1.5", onClicked: () => c2.level += 5}),
@@ -404,6 +416,31 @@ var init = () => {
             ]
         })
     });
+
+    var popup4 = ui.createPopup({
+        title: "Stats Created Theory",
+        content: ui.createStackLayout({
+            children: [
+                ui.createLabel({text: "Enter Id:"}),
+                ui.createEntry(),
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "I think so theory know :)",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createLabel({text: "Created my theory requies $ee50000."}),
+                ui.createLabel({text: "Created my theory requies dt = ???"}),
+                ui.createLabel({text: "Enter Another Id:"}),
+                ui.createEntry(),
+                ui.createImage({source: ImageSource.ACCELERATE}),,
+                ui.createButton({text: "Close", onClicked: () => popup.hide()})
+            ]
+        })
+    });
     
     
     if (currency_functions.value > 1e183) {
@@ -421,7 +458,7 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level);
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level);
     }
     if (currency.value > 1e308) {
         currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF4(f4.level);
