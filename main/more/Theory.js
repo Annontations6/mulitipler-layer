@@ -417,7 +417,7 @@ var init = () => {
         })
     });
 
-    var popup4 = ui.createPopup({
+    var popup3 = ui.createPopup({
         title: "Stats Created Theory",
         content: ui.createStackLayout({
             children: [
