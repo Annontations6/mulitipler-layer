@@ -12,7 +12,7 @@ var authors = "Annontations6";
 var version = 1.9;
 
 var currency, currency2;
-var c1, c2, c3, c4, c5, confirm0, f1, f2, f3, prestige, prestige2, prestige3, prestige4;
+var c1, c2, c3, c4, confirm0, c5, f1, f2, f3, prestige, prestige2, prestige3, prestige4;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
@@ -458,7 +458,7 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level);
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level);
     }
     if (currency.value > 1e308) {
         currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF4(f4.level);
