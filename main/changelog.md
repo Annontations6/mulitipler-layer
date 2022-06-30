@@ -1,4 +1,7 @@
 # v1
+## v1.9:
+- bug bug
+- 1 created popup
 ## v1.8:
 - fix upgrade
 - automation, power auto | Created Popup
