@@ -461,7 +461,7 @@ var tick = (elapsedTime, multiplier) => {
        currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level);
     }
     if (currency.value > 1e308) {
-        currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF4(f4.level);
+        currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF3(f3.level);
     }
 }
 
