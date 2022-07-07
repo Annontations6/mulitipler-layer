@@ -1,4 +1,10 @@
 # mulitipler-layer
+## Tick
+```js
+var tick = () => {
+   //blah
+}
+```
 ## Create Killing Mulitipler of variables
 Over aleardy this:
 ```js
