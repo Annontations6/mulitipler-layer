@@ -436,7 +436,7 @@ var init = () => {
                 ui.createLabel({text: "Created my theory requies dt = ???"}),
                 ui.createLabel({text: "Enter Another Id:"}),
                 ui.createEntry(),
-                ui.createImage({source: ImageSource.ACCELERATE}),,
+                ui.createImage({source: ImageSource.ACCELERATE}),
                 ui.createButton({text: "Close", onClicked: () => popup.hide()})
             ]
         })
