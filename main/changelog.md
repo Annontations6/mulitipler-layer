@@ -18,7 +18,7 @@
 |-------|------|-----------|---------|
 | 0 | Functions Gain | 100 | 1.2^x |
 | 1 | Functions Gain Bouns | 10,000 | 1.03^x |
-| 2 | Functions Variable Omega | 5,000,000,000 | 2^{x} |
+| 2 | Functions Variable Omega | 5,000,000,000 | 2^x |
 | 3 | Functions Variable Omega Squared | 1e21 | 2^x |
 | 4 | Functions Variable Omega Cubed | 1e69 | 2^x |
 | 5 | Functions Gain Quintple | 1e70 | 5^x |
