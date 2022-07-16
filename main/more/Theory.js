@@ -193,6 +193,17 @@ var init = () => {
         }
     }
 
+    // prestige5
+    {
+        prestige5 = theory.createUpgrade(10003, currency, new ExponentialCost(1, Math.log2(1)));
+        prestige5.getDescription = (_) => "Open changelog Menu";
+        prestige5.getInfo = (amount) => "Open changelog Menu";
+        prestige5.boughtOrRefunded = (_) => {
+            popup3.show();
+            prestige5.level = 0;
+        }
+    }
+
     /////////////////////
     // Permanent Upgrades
     theory.createBuyAllUpgrade(0, currency, 1000);
@@ -437,6 +448,28 @@ var init = () => {
                 ui.createLabel({text: "Enter Another Id:"}),
                 ui.createEntry(),
                 ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()})
+            ]
+        })
+    });
+
+    var popup4 = ui.createPopup({
+        title: "Changelog",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "Warning:get breaking the balance.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createLabel({text: "v1.10"}),
+                ui.createLabel({text: "\u2022 Get Big Big Bugs."}),
+                ui.createLabel({text: "\u2022 Diffent This Exp Idle (when this markdown.)"}),
+                ui.createLabel({text: "\u2022 more fix"}),
                 ui.createButton({text: "Close", onClicked: () => popup.hide()})
             ]
         })
