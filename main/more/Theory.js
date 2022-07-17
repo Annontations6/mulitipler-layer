@@ -199,7 +199,7 @@ var init = () => {
         prestige5.getDescription = (_) => "Open changelog Menu";
         prestige5.getInfo = (amount) => "Open changelog Menu";
         prestige5.boughtOrRefunded = (_) => {
-            popup3.show();
+            popup4.show();
             prestige5.level = 0;
         }
     }
