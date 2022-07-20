@@ -372,6 +372,7 @@ var init = () => {
                 ui.createButton({text: "Test Button 1"}),
                 ui.createButton({text: "Test Button 2"}),
                 ui.createButton({text: "Test Button 3"}),
+                ui.createButton({text: "Test Button 4"}),
                 ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()})
             ]
         })
