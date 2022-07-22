@@ -1,4 +1,9 @@
 # v1
+## v1.11
+- Idler bugs
+- Whoah Added 2 Upgrades.
+# v1.10 - v1
+###### Traded haha
 ## v1.10
 - Get Big Big Bugs.
 - Diffent This Exp Idle (when this markdown.)

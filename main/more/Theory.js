@@ -133,7 +133,7 @@ var init = () => {
     // f3
     {
         let getDesc = (level) => "f_3=5^{" + level + "}";
-        let getInfo = (level) => "f_2=" + getF3(level).toString(0);
+        let getInfo = (level) => "f_3=" + getF3(level).toString(0);
         f3 = theory.createUpgrade(11, currency_functions, new ExponentialCost(1e70, Math.log2(1e90)));
         f3.getDescription = (_) => Utils.getMath(getDesc(f3.level));
         f3.getInfo = (amount) => Utils.getMathTo(getInfo(f3.level), getInfo(f3.level + amount));
@@ -147,6 +147,35 @@ var init = () => {
         c6.getDescription = (_) => Utils.getMath(getDesc(c6.level));
         c6.getInfo = (amount) => Utils.getMathTo(getInfo(c6.level), getInfo(c6.level + amount));
         c6.maxLevel = 15;
+    }
+
+    // c7
+    {
+        let getDesc = (level) => "c_7=4^{" + level + "}";
+        let getInfo = (level) => "c_7=" + getC7(level).toString(0);
+        c7 = theory.createUpgrade(13, currency, new ExponentialCost(1e60, Math.log2(1e25)));
+        c7.getDescription = (_) => Utils.getMath(getDesc(c7.level));
+        c7.getInfo = (amount) => Utils.getMathTo(getInfo(c7.level), getInfo(c7.level + amount));
+        c7.maxLevel = 4;
+    }
+
+    // f4
+    {
+        let getDesc = (level) => "f_4=8^{" + level + "}";
+        let getInfo = (level) => "f_4=" + getF3(level).toString(0);
+        f4 = theory.createUpgrade(14, currency_functions, new ExponentialCost(1e120, Math.log2(1e60)));
+        f4.getDescription = (_) => Utils.getMath(getDesc(f4.level));
+        f4.getInfo = (amount) => Utils.getMathTo(getInfo(f4.level), getInfo(f4.level + amount));
+    }
+
+    // c8
+     {
+        let getDesc = (level) => "c_8=4^{" + level + "}";
+        let getInfo = (level) => "c_8=" + getC8(level).toString(0);
+        c8 = theory.createUpgrade(15, currency, new ExponentialCost(1e90, Math.log2(1e45)));
+        c8.getDescription = (_) => Utils.getMath(getDesc(c8.level));
+        c8.getInfo = (amount) => Utils.getMathTo(getInfo(c8.level), getInfo(c8.level + amount));
+        c8.maxLevel = 6;
     }
     
     // prestige
@@ -467,6 +496,9 @@ var init = () => {
                         verticalOptions: LayoutOptions.CENTER
                     })
                 }),
+                ui.createLabel({text: "v1.11"}),
+                ui.createLabel({text: "\u2022 Idler bugs"}),
+                ui.createLabel({text: "\u2022 Whoah Added 2 Upgrades."}),
                 ui.createLabel({text: "v1.10"}),
                 ui.createLabel({text: "\u2022 Get Big Big Bugs."}),
                 ui.createLabel({text: "\u2022 Diffent This Exp Idle (when this markdown.)"}),
@@ -477,7 +509,7 @@ var init = () => {
     });
     
     
-    if (currency_functions.value > 1e183) {
+    if (currency_functions.value > 1e235) {
         getEndPopup.show();
     }
 }
@@ -492,10 +524,10 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level);
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level) * getC7(c7.level) * getC8(c8.level);
     }
     if (currency.value > 1e308) {
-        currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF3(f3.level);
+        currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF3(f3.level) * getF4(f4.level);
     }
 }
 
@@ -534,6 +566,9 @@ var getFOMEGASQ = (level) => BigNumber.TWO.pow(level);
 var getFOMEGACUB = (level) => BigNumber.TWO.pow(level);
 var getF3 = (level) => BigNumber.from(5).pow(level);
 var getC6 = (level) => BigNumber.from(10).pow(level);
+var getC7 = (level) => BigNumber.from(4).pow(level);
+var getF4 = (level) => BigNumber.from(8).pow(level);
+var getC8 = (level) => BigNumber.from(4).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
