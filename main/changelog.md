@@ -1,7 +1,7 @@
 # v1
 ## v1.11
 - Idler bugs
-- Whoah Added 2 Upgrades.
+- Whoah Added 3 Upgrades.
 # v1.10 - v1
 ###### Traded haha
 ## v1.10
