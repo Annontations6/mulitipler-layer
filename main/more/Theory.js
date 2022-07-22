@@ -105,7 +105,7 @@ var init = () => {
 
     // fomega
     {
-        let getDesc = (level) => "f_\\omega=2^{" + level + "}";
+        let getDesc = (level) => "f_\\omega =2^{" + level + "}";
         let getInfo = (level) => "f_\\omega=" + getFOMEGA(level).toString(0);
         fomega = theory.createUpgrade(8, currency_functions, new ExponentialCost(5e9, Math.log2(1e15)));
         fomega.getDescription = (_) => Utils.getMath(getDesc(fomega.level));
