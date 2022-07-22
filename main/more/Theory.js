@@ -498,7 +498,7 @@ var init = () => {
                 }),
                 ui.createLabel({text: "v1.11"}),
                 ui.createLabel({text: "\u2022 Idler bugs"}),
-                ui.createLabel({text: "\u2022 Whoah Added 2 Upgrades."}),
+                ui.createLabel({text: "\u2022 Whoah Added 3 Upgrades."}),
                 ui.createLabel({text: "v1.10"}),
                 ui.createLabel({text: "\u2022 Get Big Big Bugs."}),
                 ui.createLabel({text: "\u2022 Diffent This Exp Idle (when this markdown.)"}),
