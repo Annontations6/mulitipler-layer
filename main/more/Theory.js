@@ -181,7 +181,7 @@ var init = () => {
     // c9
     {
         let getDesc = (level) => "c_9=7^{" + level + "}";
-        let getInfo = (level) => "c_9=" + getC8(level).toString(0);
+        let getInfo = (level) => "c_9=" + getC9(level).toString(0);
         c9 = theory.createUpgrade(16, currency, new ExponentialCost(1e135, Math.log2(1e35)));
         c9.getDescription = (_) => Utils.getMath(getDesc(c9.level));
         c9.getInfo = (amount) => Utils.getMathTo(getInfo(c9.level), getInfo(c9.level + amount));
@@ -191,7 +191,7 @@ var init = () => {
     // c10
     {
         let getDesc = (level) => "c_{10}=7^{" + level + "}";
-        let getInfo = (level) => "c_{10}=" + getC8(level).toString(0);
+        let getInfo = (level) => "c_{10}=" + getC10(level).toString(0);
         c10 = theory.createUpgrade(17, currency, new ExponentialCost(1e165, Math.log2(1e35)));
         c10.getDescription = (_) => Utils.getMath(getDesc(c10.level));
         c10.getInfo = (amount) => Utils.getMathTo(getInfo(c10.level), getInfo(c10.level + amount));
@@ -205,6 +205,36 @@ var init = () => {
         f5 = theory.createUpgrade(18, currency_functions, new ExponentialCost(1e120, Math.log2(1e60)));
         f5.getDescription = (_) => Utils.getMath(getDesc(f5.level));
         f5.getInfo = (amount) => Utils.getMathTo(getInfo(f5.level), getInfo(f5.level + amount));
+    }
+
+    // c11
+    {
+        let getDesc = (level) => "c_{11}=3^{" + level + "}";
+        let getInfo = (level) => "c_{11}=" + getC11(level).toString(0);
+        c11 = theory.createUpgrade(19, currency, new ExponentialCost(1e195, Math.log2(1e10)));
+        c11.getDescription = (_) => Utils.getMath(getDesc(c11.level));
+        c11.getInfo = (amount) => Utils.getMathTo(getInfo(c11.level), getInfo(c11.level + amount));
+        c11.maxLevel = 4;
+    }
+
+    // c12
+    {
+        let getDesc = (level) => "c_{12}=3^{" + level + "}";
+        let getInfo = (level) => "c_{12}=" + getC11(level).toString(0);
+        c12 = theory.createUpgrade(20, currency, new ExponentialCost(1e225, Math.log2(1e10)));
+        c12.getDescription = (_) => Utils.getMath(getDesc(c12.level));
+        c12.getInfo = (amount) => Utils.getMathTo(getInfo(c12.level), getInfo(c12.level + amount));
+        c12.maxLevel = 4;
+    }
+
+    // c13
+    {
+        let getDesc = (level) => "c_{13}=3^{" + level + "}";
+        let getInfo = (level) => "c_{13}=" + getC11(level).toString(0);
+        c13 = theory.createUpgrade(21, currency, new ExponentialCost(1e245, Math.log2(1e20)));
+        c13.getDescription = (_) => Utils.getMath(getDesc(c13.level));
+        c13.getInfo = (amount) => Utils.getMathTo(getInfo(c13.level), getInfo(c13.level + amount));
+        c13.maxLevel = 6;
     }
     
     // prestige
@@ -482,6 +512,8 @@ var init = () => {
                 ui.createButton({text: "Automation of Confrim0", onClicked: () => confirm0.level += 1}),
                 ui.createButton({text: "Automation of f1", onClicked: () => f1.level += 2}),
                 ui.createButton({text: "Automation of f2", onClicked: () => f2.level += 2}),
+                ui.createButton({text: "Automation of f3", onClicked: () => f3.level += 2}),
+                ui.createButton({text: "Automation of f4", onClicked: () => f4.level += 2}),
                 ui.createButton({text: "Close", onClicked: () => popup2.hide()})
             ]
         })
@@ -525,6 +557,10 @@ var init = () => {
                         verticalOptions: LayoutOptions.CENTER
                     })
                 }),
+                ui.createLabel({text: "v1.12"}),
+                ui.createLabel({text: "\u2022 Add 3 Upgrades"}),
+                ui.createLabel({text: "\u2022 Add 1 Popup"}),
+                ui.createLabel({text: "\u2022 More fixes"}),
                 ui.createLabel({text: "v1.11"}),
                 ui.createLabel({text: "\u2022 Idler bugs"}),
                 ui.createLabel({text: "\u2022 Whoah Added 3 Upgrades."}),
@@ -601,6 +637,9 @@ var getC8 = (level) => BigNumber.from(4).pow(level);
 var getC9 = (level) => BigNumber.from(4).pow(level);
 var getC10 = (level) => BigNumber.from(4).pow(level);
 var getF5 = (level) => BigNumber.from(3).pow(level);
+var getC11 = (level) => BigNumber.from(3).pow(level);
+var getC12 = (level) => BigNumber.from(3).pow(level);
+var getC13 = (level) => BigNumber.from(3).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
