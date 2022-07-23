@@ -292,6 +292,17 @@ var init = () => {
         }
     }
 
+    // prestige6
+    {
+        prestige6 = theory.createUpgrade(10004, currency, new ExponentialCost(1, Math.log2(1)));
+        prestige6.getDescription = (_) => "Open popup Menu";
+        prestige6.getInfo = (amount) => "Open popup Menu";
+        prestige6.boughtOrRefunded = (_) => {
+            popup5.show();
+            prestige6.level = 0;
+        }
+    }
+
     /////////////////////
     // Permanent Upgrades
     theory.createBuyAllUpgrade(0, currency, 1000);
