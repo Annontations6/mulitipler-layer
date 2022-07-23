@@ -243,8 +243,8 @@ var init = () => {
     // prestige4
     {
         prestige4 = theory.createUpgrade(10002, currency, new ExponentialCost(1, Math.log2(1)));
-        prestige4.getDescription = (_) => "Open stat Menu";
-        prestige4.getInfo = (amount) => "Open stat Menu";
+        prestige4.getDescription = (_) => "Open static Menu";
+        prestige4.getInfo = (amount) => "Open static Menu";
         prestige4.boughtOrRefunded = (_) => {
             popup3.show();
             prestige4.level = 0;
