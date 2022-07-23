@@ -461,7 +461,8 @@ var init = () => {
                 ui.createButton({text: "Test Button 2"}),
                 ui.createButton({text: "Test Button 3"}),
                 ui.createButton({text: "Test Button 4"}),
-                ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()})
+                ui.createButton({text: "More Test Buttons", onClicked: () => popup5.show()}),
+                ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()}),
             ]
         })
     });
@@ -572,6 +573,64 @@ var init = () => {
             ]
         })
     });
+
+    var popup5 = ui.createPopup({
+        title: "Idk Popup",
+        content: ui.createStackLayout({
+            children: [
+                ui.createButton({text: "My Button", horizontalOptions: LayoutOptions.START}),
+                ui.createCheckBox(),
+                ui.createEntry(),
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "A frame.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createGrid({
+                    columnDefinitions: ["20*", "30*", "auto"],
+                    children: [
+                        ui.createButton({text: "left", row: 0, column: 0}),
+                        ui.createButton({text: "center", row: 0, column: 1}),
+                        ui.createButton({text: "right", row: 0, column: 2, padding: new Thickness(0)})
+                    ]
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createLabel({text: "My label."}),
+                ui.createLatexLabel({text: "My LaTeX label. \\(\\int_0^1{xdx}\\)"}),
+                ui.createProgressBar({progress: 0.25}),
+                ui.createSwitch(),
+                ui.createBox({heightRequest: 1, margin: new Thickness(0, 10)}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()})
+            ]
+        })
+    });
+
+    var popup6 = ui.createPopup({
+        title: "More Test Button 1",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "Get balance go spent this test buttons.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()}),
+                ui.createButton({text: "Test Button 5"}),
+                ui.createButton({text: "Test Button 6"}),
+            ]
+        })
+    });
+    
+    
     
     
     if (currency_functions.value > 1e257) {
@@ -589,7 +648,7 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level) * getC7(c7.level) * getC8(c8.level) * getC9(c9.level) * getC10(c10.level);
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level) * getC7(c7.level) * getC8(c8.level) * getC9(c9.level) * getC10(c10.level) * getC11(c11.level) * getC12(c12.level) * getC13(c13.level);
     }
     if (currency.value > 1e308) {
         currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF3(f3.level) * getF4(f4.level) * getF5(f5.level);
