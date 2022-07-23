@@ -361,7 +361,7 @@ var init = () => {
                 ui.createFrame({
                     heightRequest: 309,
                     cornerRadius: 0,
-                    content: ui.createLabel({text: "\nYou have reached the end of Mulitipler Layer. This theory ends at the 1e183 functions, it however can go higher (if you really want to push it.)\nWe hope you enjoyed playing through this, as much as we did, making and designing this theory!\n\nCheck out the other Custom Theory that came packaged with the new update: \"Omega Layers EZ made with Jeehan2561\" after you have played this, if you haven't already!\n\nPS: If you made it this far, DM Annontations6 about how bad of a language JavaScript is end.",
+                    content: ui.createLabel({text: "\nYou have reached the end of Mulitipler Layer. This theory ends at the 1e235 functions, it however can go higher (if you really want to push it.)\nWe hope you enjoyed playing through this, as much as we did, making and designing this theory!\n\nCheck out the other Custom Theory that came packaged with the new update: \"Omega Layers EZ made with Jeehan2561\" after you have played this, if you haven't already!\n\nPS: If you made it this far, DM Annontations6 about how bad of a language JavaScript is end.",
                         padding: Thickness(12, 2, 12, 2),
                         fontSize: 15
                     })
