@@ -7,9 +7,9 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.11: Add 2 Upgrades. \nv1.10:Diffent to exp idle. \nv1.9:fix popup \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.12:The Epic Minor Update \nv1.11: Add 2 Upgrades. \nv1.10:Diffent to exp idle. \nv1.9:fix popup \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.11;
+var version = 1.12;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0, c5, f1, f2, f3, prestige, prestige2, prestige3, prestige4;
