@@ -573,6 +573,7 @@ var init = () => {
                 ui.createLabel({text: "\u2022 Add 3 Upgrades"}),
                 ui.createLabel({text: "\u2022 Add 1 Popup"}),
                 ui.createLabel({text: "\u2022 More fixes"}),
+                ui.createLabel({text: "\u2022 2 new Test Buttons."}),
                 ui.createLabel({text: "v1.11"}),
                 ui.createLabel({text: "\u2022 Idler bugs"}),
                 ui.createLabel({text: "\u2022 Whoah Added 3 Upgrades."}),

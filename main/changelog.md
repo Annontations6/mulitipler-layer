@@ -1,4 +1,9 @@
 # v1
+## v1.12 - The Epic Minor Upgate:
+- Add 3 Upgrades
+- Add 1 Popup
+- More Fix
+- New 2 Test Buttons.
 ## v1.11:
 - Idler bugs
 - Whoah Added 3 Upgrades.
