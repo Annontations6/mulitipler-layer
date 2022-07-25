@@ -7,9 +7,9 @@ import {ui} from "./api/ui/UI";
 
 var id = "Confrim?";
 var name = "Mulitipler Layer";
-var description = "when do winner this game. \n\n-----Changelog----- \nv1.11: Add 2 Upgrades. \nv1.10:Diffent to exp idle. \nv1.9:fix popup \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
+var description = "when do winner this game. \n\n-----Changelog----- \nv1.12:The Epic Minor Update \nv1.11: Add 2 Upgrades. \nv1.10:Diffent to exp idle. \nv1.9:fix popup \nv1.8:2 created popup! \nv1.7: \never fixes bugs! \nv1.6: \n1 New Story Chapter. \nv1.5: \nWhen Fix. \nv1.4: \nAdded Functions. \nv1.3: \nAdded 1 achievement. \nv1.2: \nPrivate Function bulid. \nV1.1: \nAdd Mulitipler Killing \nV1.0:\nRelease.";
 var authors = "Annontations6";
-var version = 1.11;
+var version = 1.12;
 
 var currency, currency2;
 var c1, c2, c3, c4, confirm0, c5, f1, f2, f3, prestige, prestige2, prestige3, prestige4;
@@ -181,7 +181,7 @@ var init = () => {
     // c9
     {
         let getDesc = (level) => "c_9=7^{" + level + "}";
-        let getInfo = (level) => "c_9=" + getC8(level).toString(0);
+        let getInfo = (level) => "c_9=" + getC9(level).toString(0);
         c9 = theory.createUpgrade(16, currency, new ExponentialCost(1e135, Math.log2(1e35)));
         c9.getDescription = (_) => Utils.getMath(getDesc(c9.level));
         c9.getInfo = (amount) => Utils.getMathTo(getInfo(c9.level), getInfo(c9.level + amount));
@@ -191,7 +191,7 @@ var init = () => {
     // c10
     {
         let getDesc = (level) => "c_{10}=7^{" + level + "}";
-        let getInfo = (level) => "c_{10}=" + getC8(level).toString(0);
+        let getInfo = (level) => "c_{10}=" + getC10(level).toString(0);
         c10 = theory.createUpgrade(17, currency, new ExponentialCost(1e165, Math.log2(1e35)));
         c10.getDescription = (_) => Utils.getMath(getDesc(c10.level));
         c10.getInfo = (amount) => Utils.getMathTo(getInfo(c10.level), getInfo(c10.level + amount));
@@ -205,6 +205,36 @@ var init = () => {
         f5 = theory.createUpgrade(18, currency_functions, new ExponentialCost(1e120, Math.log2(1e60)));
         f5.getDescription = (_) => Utils.getMath(getDesc(f5.level));
         f5.getInfo = (amount) => Utils.getMathTo(getInfo(f5.level), getInfo(f5.level + amount));
+    }
+
+    // c11
+    {
+        let getDesc = (level) => "c_{11}=3^{" + level + "}";
+        let getInfo = (level) => "c_{11}=" + getC11(level).toString(0);
+        c11 = theory.createUpgrade(19, currency, new ExponentialCost(1e195, Math.log2(1e10)));
+        c11.getDescription = (_) => Utils.getMath(getDesc(c11.level));
+        c11.getInfo = (amount) => Utils.getMathTo(getInfo(c11.level), getInfo(c11.level + amount));
+        c11.maxLevel = 4;
+    }
+
+    // c12
+    {
+        let getDesc = (level) => "c_{12}=3^{" + level + "}";
+        let getInfo = (level) => "c_{12}=" + getC11(level).toString(0);
+        c12 = theory.createUpgrade(20, currency, new ExponentialCost(1e225, Math.log2(1e10)));
+        c12.getDescription = (_) => Utils.getMath(getDesc(c12.level));
+        c12.getInfo = (amount) => Utils.getMathTo(getInfo(c12.level), getInfo(c12.level + amount));
+        c12.maxLevel = 4;
+    }
+
+    // c13
+    {
+        let getDesc = (level) => "c_{13}=3^{" + level + "}";
+        let getInfo = (level) => "c_{13}=" + getC11(level).toString(0);
+        c13 = theory.createUpgrade(21, currency, new ExponentialCost(1e245, Math.log2(1e20)));
+        c13.getDescription = (_) => Utils.getMath(getDesc(c13.level));
+        c13.getInfo = (amount) => Utils.getMathTo(getInfo(c13.level), getInfo(c13.level + amount));
+        c13.maxLevel = 6;
     }
     
     // prestige
@@ -259,6 +289,17 @@ var init = () => {
         prestige5.boughtOrRefunded = (_) => {
             popup4.show();
             prestige5.level = 0;
+        }
+    }
+
+    // prestige6
+    {
+        prestige6 = theory.createUpgrade(10004, currency, new ExponentialCost(1, Math.log2(1)));
+        prestige6.getDescription = (_) => "Open popup Menu";
+        prestige6.getInfo = (amount) => "Open popup Menu";
+        prestige6.boughtOrRefunded = (_) => {
+            popup5.show();
+            prestige6.level = 0;
         }
     }
 
@@ -431,7 +472,8 @@ var init = () => {
                 ui.createButton({text: "Test Button 2"}),
                 ui.createButton({text: "Test Button 3"}),
                 ui.createButton({text: "Test Button 4"}),
-                ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()})
+                ui.createButton({text: "More Test Buttons", onClicked: () => popup5.show()}),
+                ui.createButton({text: "Test End Popup", onClicked: () => getEndPopup.show()}),
             ]
         })
     });
@@ -482,6 +524,8 @@ var init = () => {
                 ui.createButton({text: "Automation of Confrim0", onClicked: () => confirm0.level += 1}),
                 ui.createButton({text: "Automation of f1", onClicked: () => f1.level += 2}),
                 ui.createButton({text: "Automation of f2", onClicked: () => f2.level += 2}),
+                ui.createButton({text: "Automation of f3", onClicked: () => f3.level += 2}),
+                ui.createButton({text: "Automation of f4", onClicked: () => f4.level += 2}),
                 ui.createButton({text: "Close", onClicked: () => popup2.hide()})
             ]
         })
@@ -525,6 +569,11 @@ var init = () => {
                         verticalOptions: LayoutOptions.CENTER
                     })
                 }),
+                ui.createLabel({text: "v1.12"}),
+                ui.createLabel({text: "\u2022 Add 3 Upgrades"}),
+                ui.createLabel({text: "\u2022 Add 1 Popup"}),
+                ui.createLabel({text: "\u2022 More fixes"}),
+                ui.createLabel({text: "\u2022 2 new Test Buttons."}),
                 ui.createLabel({text: "v1.11"}),
                 ui.createLabel({text: "\u2022 Idler bugs"}),
                 ui.createLabel({text: "\u2022 Whoah Added 3 Upgrades."}),
@@ -536,6 +585,64 @@ var init = () => {
             ]
         })
     });
+
+    var popup5 = ui.createPopup({
+        title: "Idk Popup",
+        content: ui.createStackLayout({
+            children: [
+                ui.createButton({text: "My Button", horizontalOptions: LayoutOptions.START}),
+                ui.createCheckBox(),
+                ui.createEntry(),
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "A frame.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createGrid({
+                    columnDefinitions: ["20*", "30*", "auto"],
+                    children: [
+                        ui.createButton({text: "left", row: 0, column: 0}),
+                        ui.createButton({text: "center", row: 0, column: 1}),
+                        ui.createButton({text: "right", row: 0, column: 2, padding: new Thickness(0)})
+                    ]
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createLabel({text: "My label."}),
+                ui.createLatexLabel({text: "My LaTeX label. \\(\\int_0^1{xdx}\\)"}),
+                ui.createProgressBar({progress: 0.25}),
+                ui.createSwitch(),
+                ui.createBox({heightRequest: 1, margin: new Thickness(0, 10)}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()})
+            ]
+        })
+    });
+
+    var popup6 = ui.createPopup({
+        title: "More Test Button 1",
+        content: ui.createStackLayout({
+            children: [
+                ui.createFrame({
+                    heightRequest: 50,
+                    cornerRadius: 10,
+                    content: ui.createLabel({
+                        text: "Get balance go spent this test buttons.",
+                        horizontalOptions: LayoutOptions.CENTER,
+                        verticalOptions: LayoutOptions.CENTER
+                    })
+                }),
+                ui.createImage({source: ImageSource.ACCELERATE}),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()}),
+                ui.createButton({text: "Test Button 5"}),
+                ui.createButton({text: "Test Button 6"}),
+            ]
+        })
+    });
+    
+    
     
     
     if (currency_functions.value > 1e257) {
@@ -553,7 +660,7 @@ var tick = (elapsedTime, multiplier) => {
     currency2.value *= getC1(c1.level) * getC2(c2.level) * getC3(c3.level) * getC4(c4.level) * getC5(c5.level);
     if (currency2.value > 1e24) {
        currency2.value = BigNumber.TWO;
-       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level) * getC7(c7.level) * getC8(c8.level) * getC9(c9.level) * getC10(c10.level);
+       currency.value += getCONFRIM(confirm0.level) * getC5(c5.level) * getC6(c6.level) * getC7(c7.level) * getC8(c8.level) * getC9(c9.level) * getC10(c10.level) * getC11(c11.level) * getC12(c12.level) * getC13(c13.level);
     }
     if (currency.value > 1e308) {
         currency_functions.value += getF1(f1.level) * getF2(f2.level) * getFOMEGA(fomega.level) * getFOMEGASQ(fomegasq.level) * getFOMEGACUB(fomegacub.level) * getF3(f3.level) * getF4(f4.level) * getF5(f5.level);
@@ -601,6 +708,9 @@ var getC8 = (level) => BigNumber.from(4).pow(level);
 var getC9 = (level) => BigNumber.from(4).pow(level);
 var getC10 = (level) => BigNumber.from(4).pow(level);
 var getF5 = (level) => BigNumber.from(3).pow(level);
+var getC11 = (level) => BigNumber.from(3).pow(level);
+var getC12 = (level) => BigNumber.from(3).pow(level);
+var getC13 = (level) => BigNumber.from(3).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
